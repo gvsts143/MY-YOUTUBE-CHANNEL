@@ -1,222 +1,655 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tatvamasi Media | Create • Learn • Grow</title>
-    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+    --primary-yellow: #FDB813;
+    --yellow-hover: #e5a306;
+    --bg-dark: #060D1F;
+    --bg-card: #0D1936;
+    --accent-blue: #162B5B;
+    --text-white: #FFFFFF;
+    --text-muted: #B8C4DF;
+    --youtube-red: #FF0000;
+    --border-radius: 14px;
+    --transition: all 0.3s ease;
+}
 
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="brand">
-                <img src="assets/logo.jpg" alt="Tatvamasi Media Logo" class="nav-logo">
-                <span class="brand-name">Tatvamasi <span>Media</span></span>
-            </a>
-            <nav class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#about">About & Host</a>
-                <a href="#episodes">Episodes</a>
-                <a href="#collaborate">Be a Guest</a>
-                <a href="https://www.youtube.com/@TatvamasiMedia?sub_confirmation=1" target="_blank" class="btn-subscribe">
-                    <i class="fa-brands fa-youtube"></i> Subscribe
-                </a>
-            </nav>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <div class="badge">Create • Learn • Grow</div>
-                <h1>Your Digital Media Partner for <span class="highlight">Meaningful Conversations</span></h1>
-                <p>Welcome to <strong>@TatvamasiMedia</strong> — a space to think, create, and share ideas that inspire growth, innovation, and deep learning.</p>
-                <div class="hero-buttons">
-                    <a href="#episodes" class="btn-primary">
-                        <i class="fa-solid fa-play"></i> Watch Latest Episodes
-                    </a>
-                    <a href="#collaborate" class="btn-secondary">
-                        <i class="fa-solid fa-microphone-lines"></i> Pitch as a Guest
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image-wrapper">
-                <img src="assets/hero-banner.png" alt="Tatvamasi Media Studio Setup" class="hero-banner-img">
-            </div>
-        </div>
-    </section>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    <!-- About & Host Section -->
-    <section id="about" class="about-section">
-        <div class="container about-grid">
-            <div class="about-image-wrapper">
-                <img src="assets/host-guest.png" alt="Host Tripureshwar in Tatvamasi Media Studio" class="host-img">
-                <div class="seat-tag">The Guest Chair is Waiting for You</div>
-            </div>
-            <div class="about-content">
-                <span class="section-subtitle">Behind the Mic</span>
-                <h2>Hosted by <span class="highlight">Tripureshwar</span></h2>
-                <p>At Tatvamasi Media, every conversation is built on curiosity and authenticity. Whether exploring breakthroughs in technology, personal development, entrepreneurship, or creative storytelling, we bring voices together that spark real impact.</p>
-                <div class="pillars-grid">
-                    <div class="pillar-card">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        <h3>Think</h3>
-                        <p>Deep-dive discussions on ideas that shape tomorrow.</p>
-                    </div>
-                    <div class="pillar-card">
-                        <i class="fa-solid fa-clapperboard"></i>
-                        <h3>Create</h3>
-                        <p>High-value digital media crafted for curious minds.</p>
-                    </div>
-                    <div class="pillar-card">
-                        <i class="fa-solid fa-share-nodes"></i>
-                        <h3>Share</h3>
-                        <p>Building a community that learns and grows together.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
 
-    <!-- Featured Episodes Section -->
-    <section id="episodes" class="episodes-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Tune In</span>
-                <h2>Featured <span class="highlight">Podcasts & Videos</span></h2>
-                <p>Explore our latest studio sessions on YouTube.</p>
-            </div>
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-            <!-- Replace VIDEO_ID_1, VIDEO_ID_2, VIDEO_ID_3 with your actual YouTube Video IDs -->
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="dQw4w9WgXcQ">
-                        <img src="assets/hero-banner.png" alt="Episode 1">
-                        <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
-                    </div>
-                    <div class="video-info">
-                        <span class="tag">Podcast</span>
-                        <h3>Welcome to Tatvamasi Media: Vision & Journey</h3>
-                        <p>Discover the story behind our studio and what we are building together.</p>
-                    </div>
-                </div>
+.highlight {
+    color: var(--primary-yellow);
+}
 
-                <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="dQw4w9WgXcQ">
-                        <img src="assets/host-guest.png" alt="Episode 2">
-                        <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
-                    </div>
-                    <div class="video-info">
-                        <span class="tag">Conversation</span>
-                        <h3>Innovation, Mindset & Digital Growth</h3>
-                        <p>Candid insights with industry leaders and educators on navigating the future.</p>
-                    </div>
-                </div>
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(6, 13, 31, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(253, 184, 19, 0.15);
+    padding: 14px 0;
+}
 
-                <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="dQw4w9WgXcQ">
-                        <img src="assets/hero-banner.png" alt="Episode 3">
-                        <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
-                    </div>
-                    <div class="video-info">
-                        <span class="tag">Masterclass</span>
-                        <h3>Think, Create, Share: Building Your Voice</h3>
-                        <p>Practical frameworks for creators, students, and lifelong learners.</p>
-                    </div>
-                </div>
-            </div>
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-            <div class="center-cta">
-                <a href="https://www.youtube.com/@TatvamasiMedia" target="_blank" class="btn-primary">
-                    Explore Full Channel on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-white);
+}
 
-    <!-- Guest Collaboration / Contact Section -->
-    <section id="collaborate" class="contact-section">
-        <div class="container contact-box">
-            <div class="contact-info">
-                <img src="assets/logo.jpg" alt="Tatvamasi Media" class="contact-logo">
-                <h2>Take the <span class="highlight">Guest Seat</span></h2>
-                <p>Have an inspiring journey, technical expertise, or a unique perspective to share? Apply to appear on the Tatvamasi Media podcast or partner with us for digital media collaborations.</p>
-                <ul class="contact-details">
-                    <li><i class="fa-brands fa-youtube"></i> youtube.com/@TatvamasiMedia</li>
-                    <li><i class="fa-solid fa-location-dot"></i> Hyderabad, India</li>
-                </ul>
-            </div>
+.nav-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid var(--primary-yellow);
+}
 
-            <form class="contact-form" id="guestForm">
-                <h3>Guest & Collaboration Inquiry</h3>
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" required placeholder="Enter your full name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" required placeholder="you@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="topic">Proposed Topic / Collaboration Type</label>
-                    <select id="topic">
-                        <option value="Podcast Guest">Appear as a Podcast Guest</option>
-                        <option value="Media Partnership">Digital Media Partnership</option>
-                        <option value="Sponsorship">Channel Sponsorship</option>
-                        <option value="Other">General Inquiry</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Tell us about your story</label>
-                    <textarea id="message" rows="4" required placeholder="Briefly describe what you'd like to discuss..."></textarea>
-                </div>
-                <button type="submit" class="btn-primary full-width">Send Pitch</button>
-                <p id="formStatus" class="form-status"></p>
-            </form>
-        </div>
-    </section>
+.brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="assets/logo.jpg" alt="Tatvamasi Media Logo">
-                <div>
-                    <h4>Tatvamasi Media</h4>
-                    <p>Create • Learn • Grow</p>
-                </div>
-            </div>
-            <div class="social-links">
-                <a href="https://www.youtube.com/@TatvamasiMedia" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
-            <p class="copyright">© 2026 Tatvamasi Media (@TatvamasiMedia). All rights reserved.</p>
-        </div>
-    </footer>
+.brand-name span {
+    color: var(--primary-yellow);
+}
 
-    <!-- Video Modal -->
-    <div class="modal" id="videoModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeModal">×</button>
-            <div class="iframe-container">
-                <iframe id="youtubePlayer" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-yellow);
+}
+
+.btn-subscribe {
+    background-color: var(--youtube-red);
+    color: #fff !important;
+    padding: 9px 18px;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-subscribe:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-yellow);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    padding: 70px 0 90px;
+    background: radial-gradient(circle at top right, #122859 0%, var(--bg-dark) 65%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary-yellow);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: var(--primary-yellow);
+    color: #000;
+    padding: 13px 26px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--yellow-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--primary-yellow);
+    padding: 11px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: rgba(253, 184, 19, 0.12);
+}
+
+.hero-banner-img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(253, 184, 19, 0.25);
+    border: 2px solid rgba(253, 184, 19, 0.4);
+}
+
+/* About & Host Section */
+.about-section {
+    padding: 90px 0;
+    background-color: #081229;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image-wrapper {
+    position: relative;
+}
+
+.host-img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--primary-yellow);
+}
+
+.seat-tag {
+    position: absolute;
+    bottom: -16px;
+    right: 20px;
+    background: var(--primary-yellow);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.section-subtitle {
+    color: var(--primary-yellow);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.about-content h2 {
+    font-size: 2.3rem;
+    margin: 8px 0 18px;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.pillar-card {
+    background: var(--bg-card);
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pillar-card i {
+    color: var(--primary-yellow);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.pillar-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.pillar-card p {
+    font-size: 0.82rem;
+    margin-bottom: 0;
+}
+
+/* Episodes Section */
+.episodes-section {
+    padding: 90px 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.section-header h2 {
+    font-size: 2.3rem;
+    margin: 8px 0 12px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.video-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-yellow);
+}
+
+.video-thumbnail {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 13, 31, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-overlay i {
+    width: 56px;
+    height: 56px;
+    background: var(--primary-yellow);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px rgba(253, 184, 19, 0.7);
+}
+
+.video-info {
+    padding: 22px;
+}
+
+.video-info .tag {
+    background: rgba(253, 184, 19, 0.15);
+    color: var(--primary-yellow);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.video-info h3 {
+    font-size: 1.15rem;
+    margin: 12px 0 8px;
+}
+
+.video-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.center-cta {
+    text-align: center;
+    margin-top: 45px;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background: #081229;
+}
+
+.contact-box {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 45px;
+    border: 1px solid rgba(253, 184, 19, 0.25);
+}
+
+.contact-logo {
+    width: 85px;
+    height: 85px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: 2px solid var(--primary-yellow);
+}
+
+.contact-info h2 {
+    font-size: 2.1rem;
+    margin-bottom: 14px;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.contact-details {
+    list-style: none;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.contact-details i {
+    color: var(--primary-yellow);
+    font-size: 1.2rem;
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+    font-size: 1.35rem;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+}
+
+.full-width {
+    width: 100%;
+    justify-content: center;
+}
+
+.form-status {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--primary-yellow);
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+}
+
+.footer-brand img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    color: var(--primary-yellow);
+}
+
+.social-links {
+    display: flex;
+    gap: 18px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--primary-yellow);
+    color: #000;
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Video Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+}
+
+.close-modal {
+    position: absolute;
+    top: -42px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+.iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--primary-yellow);
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero-grid, .about-grid, .contact-box {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-card);
+        flex-direction: column;
+        padding: 24px;
+        border-bottom: 1px solid rgba(253, 184, 19, 0.2);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .contact-box {
+        padding: 28px 20px;
+    }
+}
+
+
+
